@@ -1,30 +1,35 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Seep's blog</title>
+	<title> Seep's blog</title>
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+	<link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="{% static 'css/blog.css' %}">
 </head>
 <body>
-	<div>
+	<div class="page-header">
 		<h1>Welcome to my blog</h1>
-		<h3>This is a blog about my experiments with coding</h3>
+		<h4><em>This is a blog about my experiments with coding</em></h4>
 	</div>
 	
-	<div>
+	<div class="content">
 		<p> <em> What's my story?</em>
 	 After a several years of promoting companies as a Public Relations professional, 
 	 I decided to change my path and started my programming journey this year.
 	 I’m enjoying making applications and becoming a part of really friendly tech community. 
-	<a href="https://seepgulati.co">Know more about me</a>
+	 <h2><a href="https://seepgulati.co">Know more about me</a></h2>
 	</p>
 	</div>
 
 </div>
 {% for post in posts %}
-    <div>
-        <h4>Created_date: {{ post.created_date }}</h4>
+    <div class="post">
+        <!-- <h4>Created_date: {{ post.created_date }}</h4> -->
         <h2><a href="">{{ post.title }}</a></h2>
         <p>{{ post.text|linebreaksbr }}</p>
     </div>
